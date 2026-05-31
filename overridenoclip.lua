@@ -29,7 +29,11 @@ if timer.Exists("noclip") then
 	if ply:KeyDown(IN_SPEED) then
 	    speed = 50
 	else
-	    speed = 15
+	    if ply:KeyDown(IN_DUCK) then
+	        speed = 150
+	    else
+	        speed = 15
+	    end
 	end
 	RunConsoleCommand("setpos_exact", tostring(pos.x), tostring(pos.y), tostring(pos.z))
 	if ply:GetMoveType() ~= MOVETYPE_NOCLIP then
@@ -38,4 +42,3 @@ if timer.Exists("noclip") then
     end)
 
 end
-
