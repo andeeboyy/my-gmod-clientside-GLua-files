@@ -17,7 +17,7 @@ if hook.GetTable()["Tick"]["aim"] then
 	
 	foundent = 0
 	if isentity(target) and IsValid(target) then
-	    if IsValid(target) and target:Alive() and target:IsPlayer() or target:IsNPC() then
+	    if IsValid(target) and target:IsPlayer() or target:IsNPC() then
 		local head = target:LookupBone("ValveBiped.Bip01_Head1")
 		if head ~= nil then
 		    local shootpoint = target:GetBonePosition(head) + Vector(0, 0, 1)
