@@ -88,7 +88,7 @@ if hook.GetTable()["HUDPaint"]["examine"] then
 	end
 	local plr = LocalPlayer()
 	local trace = plr:GetEyeTrace()
-	ent = plr:GetEyeTrace().Entity
+	local ent = plr:GetEyeTrace().Entity
 	surface.SetFont("CloseCaption_Bold")
 	if isentity(ent) and IsValid(ent) then
 
