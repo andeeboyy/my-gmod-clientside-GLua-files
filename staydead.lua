@@ -9,7 +9,7 @@ if hook.GetTable()["Tick"]["staydead"] then
     print("Stay-Dead On.")
 
     hook.Add("Tick", "staydead", function()
-	if GetConVar("sv_cheats"):GetFloat() > 1 then
+	if GetConVar("sv_cheats"):GetFloat() > 0 then
 	    if LocalPlayer():Alive() then
 	    	LocalPlayer():ConCommand("give mortarshell")
 	    	LocalPlayer():ConCommand("give mortarshell")
