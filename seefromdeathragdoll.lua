@@ -29,8 +29,6 @@ if hook.GetTable()["CalcView"]["seefromragdoll"] then
 		curhurt = CurTime()
 		dps = dps + damagetaken / (curhurt - lasthurt)
 		lasthurt = CurTime()
-		print(damagetaken)
-		print(dps)
 	    end
 	end
 	lasttickhealth = health
