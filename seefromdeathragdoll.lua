@@ -25,9 +25,13 @@ if hook.GetTable()["CalcView"]["seefromragdoll"] then
 	local health = plr:Health()
 	if lasttickhealth != nil then
 	    if health < lasttickhealth then
+		local halflife = 1.001
 	        damagetaken = lasttickhealth - health
 		curhurt = CurTime()
-		dps = dps + damagetaken / (curhurt - lasthurt)
+		local decay = 0.5 ^ (curhurt - lasthurt) / halflife
+		dps = dps * decay
+		dps = dps + (damagetaken / halflife)
+
 		lasthurt = CurTime()
 	    end
 	end
@@ -42,7 +46,7 @@ if hook.GetTable()["CalcView"]["seefromragdoll"] then
 	    end
 	    activation2 = 1
 	    timepassed = CurTime() - time
-	    local progress = timepassed * math.Clamp(dps * 0.01, 0.1, 10)
+	    local progress = timepassed * math.Clamp(dps * 0.01, 0.1, 1)
 	    alpha = math.Clamp(progress * 255, 0, 255)
 	    if progress < 0.75 and IsValid(plr:GetRagdollEntity()) then
 	    	plr:SetDSP(27)
