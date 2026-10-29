@@ -9,7 +9,7 @@ if hook.GetTable()["Tick"]["obliterate"] then
     print("Obliteration On.")
 
     hook.Add("Tick", "obliterate", function()
-	LocalPlayer():ConCommand("ent_create prop_physics model models/props_junk/garbage_glassbottle003a.mdl physdamagescale 100000 ExplodeDamage 1000000 ExplodeRadius 500 massScale 10000; ent_create grenade_ar2")
+	LocalPlayer():ConCommand("ent_create prop_physics model models/props_junk/garbage_glassbottle003a.mdl physdamagescale 100000 ExplodeDamage 214748369 ExplodeRadius 500 massScale 10000; ent_create npc_handgrenade")
     end)
 
 end
