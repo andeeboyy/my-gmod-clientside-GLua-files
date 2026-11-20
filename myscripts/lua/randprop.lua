@@ -11,14 +11,18 @@ local function AddToPropPool(path, tablechosen)
     	local models, _ = file.Find(path .. "/*.mdl", "GAME", "nameasc")
 
 	for _, propname in ipairs(models) do
-	    table.insert(tablechosen, path .. "/" .. propname)
+	    if util.IsValidModel(path .. "/" .. propname) then
+	    	table.insert(tablechosen, path .. "/" .. propname)
+	    end
     	end
 
     else
 	local models, _ = file.Find(path .. "/*.mdl", "garrysmod", "nameasc")
 
 	for _, propname in ipairs(models) do
-	    table.insert(tablechosen, path .. "/" .. propname)
+	    if util.IsValidModel(path .. "/" .. propname) then
+	    	table.insert(tablechosen, path .. "/" .. propname)
+	    end
     	end
     end
 end
